@@ -41,7 +41,7 @@ def nice_mean(nice,mean,name):
         pick = input("\nA stranger approaches you for a \nconversation. Will you be nice \nor mean? (N/M) \n>>>: ").lower()
         if pick == "n":
             print("\nThe stranger walks away smiling...")
-            mean = (nice + 1)
+            nice = (nice + 1)
             stop = False
         if pick == "m":
             print("\nThe stranger glares at you \nmenacingly and storms off...")
