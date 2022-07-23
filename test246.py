@@ -14,7 +14,7 @@ class Parents(Marzett):
     car = ' '
     #adds job to hello function in self
     def hello(self):
-        print("Hello", self.name, " your age is", self.age, " and your job is " job)
+        print("Hello", self.name, " your age is", self.age, " and your job is ", job)
         
 class Children(Marzett):
     #second child created through inheritance from Marzett
@@ -23,6 +23,6 @@ class Children(Marzett):
 
     #adds hobby instead of job to hello function
     def hello(self):
-        print("Hello", self.name, " your age is", self.age, " and your hobby is " hobby)
+        print("Hello", self.name, " your age is", self.age, " and your hobby is ", hobby)
         
 
