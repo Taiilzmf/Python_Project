@@ -4,7 +4,7 @@ class Protected: #this is our protected class
 
 obj = Protected()
 obj._protectedVar = 7
-print(obj.protectedVar)
+print(obj._protectedVar)
 #^this objs get data from protected variable
 
 class Private:
@@ -12,7 +12,7 @@ class Private:
         self.__privateVar = 32 #private class denoted with double __
 
     def getPrivate(self):
-        print(self.privateVar)
+        print(self.__privateVar)
 
     def setPrivate(self, private):
         self.__privateVar = private
