@@ -20,7 +20,7 @@ class ParentWindow(Frame):
         tk.Label(self.master, text="Enter custom text or click the Default HTML page button").grid(row = 3, column = 0)
 
         self.Entry1 = Entry(self.master, textvariable = 'Enter here:', width=100)
-        Entry1.grid(row= 4, column= 0, padx = 10, columnspan= 30)
+        self.Entry1.grid(row= 4, column= 0, padx = 10, columnspan= 30)
     #functionality to default html button
     def defaultHTML(self):
         htmlText = "Stay tuned for our amazing summer sale!"
