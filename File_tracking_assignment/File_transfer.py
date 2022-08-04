@@ -68,19 +68,18 @@ class ParentWindow(Frame):
         #creates path and checks if files have been modified
         
 
-        if modification_time < Previous_Date: shutil.move(source + '/' + i, destination)
         #runs through each file in the source directory
         for i in source_files:
-            path= os.path.join(Source, i)
+            path= os.path.join(source, i)
             modification_time = os.path.getmtime(path)
             Previous_Date = datetime.datetime.today() - datetime.timedelta(days=1)
             print(Previous_Date)
             date_time_of_file = datetime.datetime.fromtimestamp(modification_time)
             print(date_time_of_file)
             if Previous_Date < date_time_of_file:
-            #moves each file in the source to  the destination
-            shutil.move(source + '/' + i, destination)
-            print(i + ' was successfully transferred.')
+                #moves each file in the source to  the destination
+                shutil.move(source + '/' + i, destination)
+                print(i + ' was successfully transferred.')
 
     def exit_program(self):
         #root is the   m ain GUI window, the Tkinter destroy method
