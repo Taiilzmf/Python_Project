@@ -18,8 +18,8 @@ class ParentWindow(Frame):
         
         #display entry field
         tk.Label(self.master, text="Enter custom text or click the Default HTML page button").grid(row = 3, column = 0)
-        
-        Entry1 = tk.Entry(root, textvariable = 'Enter here:', width =100)
+
+        self.Entry1 = Entry(self.master, textvariable = 'Enter here:', width=100)
         Entry1.grid(row= 4, column= 0, padx = 10, columnspan= 30)
     #functionality to default html button
     def defaultHTML(self):
@@ -31,8 +31,9 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
     def get_data(self):
-        tk.Label.config(text= tk.Entry.cget(self))
+        htmlText = self.Entry1.get()
         htmlFile = open("index.html", "w")
+        htmlContent = "<html>\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
         htmlFile.write(htmlContent)
         htmlFile.close()
         webbrowser.open_new_tab("index.html")
