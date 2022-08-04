@@ -66,13 +66,18 @@ class ParentWindow(Frame):
         #gets a list of files in the source directory
         source_files = os.listdir(source)
         #creates path and checks if files have been modified
-        path= "C:/Users/shael/OneDrive/Documents/GitHub/Python_Project/File_tracking_assignment/Customer Source"
+        
 
-        modification_time = os.path.getmtime(path)
-        Previous_Date = datetime.datetime.today() - datetime.timedelta(days=1)
         if modification_time < Previous_Date: shutil.move(source + '/' + i, destination)
         #runs through each file in the source directory
         for i in source_files:
+            path= os.path.join(Source, i)
+            modification_time = os.path.getmtime(path)
+            Previous_Date = datetime.datetime.today() - datetime.timedelta(days=1)
+            print(Previous_Date)
+            date_time_of_file = datetime.datetime.fromtimestamp(modification_time)
+            print(date_time_of_file)
+            if Previous_Date < date_time_of_file:
             #moves each file in the source to  the destination
             shutil.move(source + '/' + i, destination)
             print(i + ' was successfully transferred.')
